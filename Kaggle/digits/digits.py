@@ -14,5 +14,5 @@ clf = RandomForestClassifier(n_estimators=100)
 clf.fit(x,np.ravel(y))
 pred = clf.predict(test)
 
-submission = pd.DataFrame({"ImageId":test.index, "Label":pred})
+submission = pd.DataFrame({"ImageId":test.index+1, "Label":pred})
 submission.to_csv('rf_python_digits.csv', index=False)
